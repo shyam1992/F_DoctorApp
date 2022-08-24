@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import './dashboard.dart';
+import 'package:app_2/book_appointment.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,7 +13,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(fontFamily: 'WorkSans'),
-      home: const Dashboard(),
+      initialRoute: '/home',
+      routes: {
+        '/home': (context) => const Dashboard(),
+        '/appointment': (context) => const BookAppointment()
+      },
     );
   }
 }
